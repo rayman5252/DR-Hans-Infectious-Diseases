@@ -1,0 +1,90 @@
+/* ===== Rare Diseases with Dr. Hans ===== */
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Open+Sans:wght@400;600&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --dark: #1b1b1b;
+  --purple: #2d0a4e;
+  --accent: #7c3aed;
+  --light: #f7f7f7;
+}
+
+body {
+  font-family: 'Open Sans', Arial, sans-serif;
+  color: var(--dark);
+  line-height: 1.6;
+  background: #fff;
+}
+
+h1, h2, h3, h4 { font-family: 'Archivo Black', Arial, sans-serif; font-weight: 400; }
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+/* Header / nav */
+.site-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 32px; background: #fff; border-bottom: 1px solid #eee;
+  position: sticky; top: 0; z-index: 100;
+}
+.site-header .logo img { height: 56px; width: auto; border-radius: 6px; }
+.nav a {
+  margin-left: 26px; font-size: 15px; font-weight: 600; color: var(--dark);
+}
+.nav a:hover { color: var(--accent); }
+
+/* Hero */
+.hero {
+  min-height: 70vh;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; color: #fff; padding: 80px 20px;
+  background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
+              url('images/background.png') center/cover no-repeat;
+}
+.hero h1 { font-size: clamp(32px, 6vw, 54px); line-height: 1.15; margin-bottom: 20px; }
+.hero p { max-width: 720px; font-size: 18px; margin-bottom: 28px; }
+
+/* Buttons */
+.btn {
+  display: inline-block; background: var(--accent); color: #fff;
+  padding: 12px 28px; border-radius: 4px; font-weight: 600; font-size: 15px;
+  border: none; cursor: pointer; transition: background .2s;
+}
+.btn:hover { background: #5b21b6; }
+
+/* Sections */
+.section { max-width: 960px; margin: 0 auto; padding: 60px 24px; }
+.section h2 { font-size: 20px; text-transform: uppercase; margin-bottom: 20px; letter-spacing: .5px; }
+.section p { margin-bottom: 16px; }
+
+.meet { display: grid; grid-template-columns: 1fr 1.4fr; gap: 36px; align-items: center; }
+.meet img { border-radius: 8px; }
+@media (max-width: 720px){ .meet { grid-template-columns: 1fr; } }
+
+/* Podcast episodes */
+.episodes { max-width: 900px; margin: 0 auto; padding: 40px 24px; }
+.page-title { text-align: center; font-size: 30px; margin: 40px 0; text-transform: uppercase; }
+.episode { margin-bottom: 56px; }
+.episode h4 { font-size: 18px; margin-bottom: 14px; }
+.video-wrap { position: relative; padding-bottom: 56.25%; height: 0; margin-bottom: 16px; }
+.video-wrap iframe { position: absolute; top:0; left:0; width:100%; height:100%; border:0; border-radius: 6px; }
+.episode p { margin-bottom: 12px; }
+.episode a { color: var(--accent); word-break: break-word; }
+
+/* Contact */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+@media (max-width: 720px){ .contact-grid { grid-template-columns: 1fr; } }
+.contact form { display: flex; flex-direction: column; gap: 14px; }
+.contact input, .contact textarea {
+  padding: 12px; border: 1px solid #ccc; border-radius: 4px; font: inherit;
+}
+.contact textarea { min-height: 140px; resize: vertical; }
+.social a { display: inline-block; margin-right: 18px; font-weight: 600; color: var(--accent); }
+
+/* Footer */
+.site-footer {
+  background: var(--dark); color: #cfcfcf; font-size: 13px;
+  padding: 40px 24px; text-align: center;
+}
+.site-footer .disclaimer { max-width: 820px; margin: 0 auto; }
