@@ -24,21 +24,41 @@
     <a class="btn" href="podcasts.html">To Podcasts</a>
   </section>
 
-  <section class="section">
+  <div class="divider"><span></span></div>
+
+  <section class="section reveal">
     <h2>About Rare Diseases with Dr. Hans</h2>
-    <p>Join Dr. Hans on "Rare Diseases with Dr. Hans" where the world of rare diseases comes into focus. In each episode, Dr. Hans dives deep into the stories behind uncommon conditions, exploring cutting-edge research, breakthrough treatments, and the inspiring journeys of patients and their families. With expert guests and insightful discussions, "Rare Diseases" sheds light on the mysteries of rare diseases and brings hope to those navigating these challenging conditions. Tune in for a blend of science, empathy, and innovation that makes the rare more understandable and accessible.</p>
+    <p>Join Dr. Hans on "Rare Diseases with Dr. Hans" where the world of rare diseases comes into focus. Dr. Hans dives deep into the stories behind uncommon conditions, exploring cutting-edge research, breakthrough treatments, and the inspiring journeys of patients and their families. With expert guests and insightful discussions, "Rare Diseases" sheds light on the mysteries of rare diseases and brings hope to those navigating these challenging conditions. Tune in for a blend of science, empathy, and innovation that makes the rare more understandable and accessible.</p>
   </section>
 
-  <section class="section">
+  <div class="divider"><span></span></div>
+
+  <section class="section reveal">
     <h2>Meet Dr. Hans</h2>
     <div class="meet">
       <img src="meet-dr-hans.JPG" alt="Dr. Hans with his son">
       <p>Dr. Hans Schlecht trained in Internal Medicine and Infectious Diseases at Beth Israel Deaconess Medical Center and completed a Clinical Investigator Training Program with a Masters in Medical Sciences from Harvard/MIT Health Sciences and Technology. He is a parent to a son with SYNGAP1 deficiency and since March 2017, an advocate for advancing the care and research for this rare disease.</p>
+    </div>
+    <div class="meet-video">
+      <h3>Meet Dr. Hans &mdash; An Introduction</h3>
+      <div class="video-wrap"><iframe src="https://www.youtube.com/embed/MtV_TcAT1L4" title="Meet Dr. Hans" allowfullscreen></iframe></div>
+      <p class="video-caption">A touching insight into the origin of Dr. Hans' interest in rare diseases and how it touches his family.</p>
     </div>
   </section>
 
   <footer class="site-footer">
     <p class="disclaimer">Copyright &copy; 2025 Rare Diseases with Dr.Hans - All Rights Reserved. Disclaimer: The views expressed in these videos are those of Dr. Hans alone and do not reflect the views of his employer. Also any medical advice is for entertainment purposes only and people needing medical advice should seek their own medical professionals.</p>
   </footer>
+
+  <script>
+    (function(){
+      var els=document.querySelectorAll('.reveal');
+      if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in');});return;}
+      var io=new IntersectionObserver(function(entries){
+        entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target);} });
+      },{threshold:0.15});
+      els.forEach(function(e){io.observe(e);});
+    })();
+  </script>
 </body>
 </html>
