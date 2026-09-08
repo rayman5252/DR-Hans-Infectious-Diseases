@@ -198,3 +198,100 @@ img { max-width: 100%; display: block; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .btn:hover, .episode:hover { transform: none; }
 }
+
+
+/* ===== Podcast page cool-factor ===== */
+
+/* Two-per-row responsive grid */
+.episode-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+@media (max-width: 720px) {
+  .episode-grid { grid-template-columns: 1fr; gap: 24px; }
+}
+
+/* Episode cards */
+.episode-grid .episode {
+  position: relative;
+  margin-bottom: 0;
+  padding: 22px 20px 20px;
+  background: linear-gradient(160deg, #ffffff 0%, #f5f0fb 100%);
+  border: 1px solid #ece6f6;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(45,10,78,.06);
+  overflow: hidden;
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+}
+/* Purple accent bar that sweeps across the top on hover */
+.episode-grid .episode::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--purple));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .35s ease;
+}
+.episode-grid .episode:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 34px rgba(124,58,237,.22);
+  border-color: #d9c9f2;
+}
+.episode-grid .episode:hover::before { transform: scaleX(1); }
+
+/* Episode number badge */
+.ep-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 46px; height: 46px;
+  padding: 0 6px;
+  margin-bottom: 12px;
+  font-family: 'Archivo Black', Arial, sans-serif;
+  font-size: 15px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--purple));
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(124,58,237,.35);
+  letter-spacing: .5px;
+}
+.episode-grid .episode h4 {
+  font-size: 17px;
+  line-height: 1.3;
+  min-height: 44px;
+}
+.episode-grid .episode p {
+  font-size: 14px;
+  color: #4a4a4a;
+}
+.episode-grid .episode a { color: var(--accent); }
+
+/* Jazzed-up podcast page title */
+.episodes .page-title {
+  position: relative;
+  background: linear-gradient(90deg, var(--accent), var(--purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.episodes .page-title::after {
+  content: "";
+  display: block;
+  width: 90px; height: 4px;
+  margin: 14px auto 0;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--purple));
+  background-size: 200% 100%;
+  animation: dividerFlow 6s linear infinite;
+}
+
+/* Keep hover lift disabled under reduced motion for cards too */
+@media (prefers-reduced-motion: reduce) {
+  .episode-grid .episode:hover { transform: none; }
+  .episode-grid .episode::before { transition: none; }
+}
