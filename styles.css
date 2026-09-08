@@ -377,22 +377,10 @@ img { max-width: 100%; display: block; }
   border: 1px solid #e2d6f6;
 }
 
-/* Search + filter controls */
+/* Filter controls */
 .pod-controls {
   max-width: 900px; margin: 20px auto 26px;
   display: flex; flex-direction: column; gap: 16px; align-items: center;
-}
-.pod-search {
-  width: 100%; max-width: 520px;
-  padding: 13px 18px;
-  font: inherit; font-size: 15px;
-  border: 1px solid #ddd; border-radius: 999px;
-  background: #fff;
-  transition: border-color .25s ease, box-shadow .25s ease;
-}
-.pod-search:focus {
-  outline: none; border-color: var(--accent);
-  box-shadow: 0 0 0 4px rgba(124,58,237,.15);
 }
 .pod-chips { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
 .chip {
