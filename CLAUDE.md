@@ -10,6 +10,11 @@ Website for Dr. Hans (infectious and rare diseases): podcasts, documentaries, co
 ## Hosting
 Ray keeps hosting lean across his sites (he's at his Vercel plan limit). Don't add services or big files.
 
+## Standing order: keep this file current (Ray asked for this permanently)
+- Whenever you commit work in this repo, update the "Current state / where we left off" section below **in the same commit**: what changed, what's half-done, what's next. Don't wait to be asked.
+- If anything above goes stale (new page, new game, hosting change, new gotcha), fix it in that commit too.
+- Keep the "where we left off" section to the last few sessions; trim older lines so the file stays short.
+- Ray works on two computers. At the start of a session, `git pull` before touching anything; push when done.
+
 ## Current state / where we left off
-Update this at the end of each work session.
 - Last change: replaced the documentary video with `vgIAD5osLLw`.
